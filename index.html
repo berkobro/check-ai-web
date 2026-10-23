@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Check AI — Study Planner</title>
+    <meta name="description" content="All your assignments in one place, with study guides, schedules, quizzes and flashcards made with your own Claude account." />
+    <meta name="theme-color" content="#4f46e5" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono&display=swap" rel="stylesheet" />
+    <script>
+      // Apply the saved theme before first paint (no flash).
+      try {
+        var t = (JSON.parse(localStorage.getItem("check-ai:static:v1") || "{}").settings || {}).theme || "system";
+        if (t === "dark" || (t === "system" && matchMedia("(prefers-color-scheme: dark)").matches)) document.documentElement.classList.add("dark");
+      } catch (e) {}
+    </script>
+  </head>
+  <body class="min-h-full bg-background text-foreground antialiased">
+    <noscript><p style="padding:1rem;font-family:sans-serif">Check AI needs JavaScript to run.</p></noscript>
+    <div id="root"></div>
+    <script type="module" src="./src/main.tsx"></script>
+  </body>
+</html>

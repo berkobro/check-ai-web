@@ -1,0 +1,38 @@
+/* Same design tokens and components as the full app, plus a brand accent for the Pages site. */
+@import "./shared/globals.css";
+@source "./";
+
+:root {
+  --font-geist-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-geist-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --primary: oklch(0.51 0.23 277);
+  --primary-foreground: oklch(0.985 0 0);
+  --ring: oklch(0.62 0.18 277);
+  --accent: oklch(0.96 0.02 277);
+  --accent-foreground: oklch(0.3 0.12 277);
+}
+
+.dark {
+  --primary: oklch(0.7 0.15 277);
+  --primary-foreground: oklch(0.17 0.03 277);
+  --ring: oklch(0.6 0.15 277);
+  --accent: oklch(0.28 0.05 277);
+  --accent-foreground: oklch(0.95 0.02 277);
+}
+
+html {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
